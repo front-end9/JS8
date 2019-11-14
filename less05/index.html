@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        main {
+            position: relative;
+            margin: 10px;
+        }
+
+        #rectangle {
+            position: absolute;
+            background-color: blue;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="rectangleInfo(rectangle)">rectangleInfo</button>
+    <button onclick="rectangleWidth(rectangle, true)">rectangleWidth</button>
+    <button onclick="rectangleHeight(rectangle, true)">rectangleHeight</button>
+    <button onclick="rectangleArea(rectangle, true)">rectangleArea</button>
+    <button onclick="rectanglePerimeter(rectangle, true)">rectanglePerimeter</button>
+    <button onclick="rectangleChangeWidth(rectangle)">rectangleChangeWidth</button>
+    <button onclick="rectangleChangeHeight(rectangle)">rectangleChangeHeight</button>
+    <button onclick="rectangleChangeDimension(rectangle)">rectangleChangeDimension</button>
+    <button onclick="rectangleMoveX(rectangle)">rectangleMoveX</button>
+    <button onclick="rectangleMoveY(rectangle)">rectangleMoveY</button>
+    <button onclick="rectangleMove(rectangle)">rectangleMove</button>
+    <button onclick="isRectanglePoint(rectangle)">isRectanglePoint</button>
+    <main>
+        <div id="rectangle"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
