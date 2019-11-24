@@ -19,6 +19,7 @@ class PrintMaсhine {
         `);
     }
 }
+
 class PrintLink extends PrintMaсhine {
     constructor(_options) {
         super(_options);
