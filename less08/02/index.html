@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid transparent;
+            border-bottom: none !important;
+            padding: 5px;
+        }
+
+        li:nth-child(1) {
+            border-color: red;
+        }
+
+        li:nth-child(2) {
+            border-color: blue;
+        }
+
+        li:nth-child(3) {
+            border-color: green;
+        }
+
+        li:not(.active) {
+            opacity: .5;
+        }
+
+        li:nth-child(4) {
+            border-color: black;
+        }
+
+        div {
+            border: 1px solid transparent;
+            border-top: none !important;
+            padding: 5px;
+        }
+
+        div:nth-child(1) {
+            border-color: red;
+        }
+
+        div:nth-child(2) {
+            border-color: blue;
+        }
+
+        div:nth-child(3) {
+            border-color: green;
+        }
+
+        div:nth-child(4) {
+            border-color: black;
+        }
+
+        div:not(.active) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active" onclick="Active(0)">Lorem, ipsum.</li>
+        <li onclick="Active(1)">Nesciunt, ab!</li>
+        <li onclick="Active(2)">Ullam, magni?</li>
+        <li onclick="Active(3)">Impedit, modi!</li>
+    </ul>
+    <main>
+        <div class="active">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum vel quisquam eveniet
+            aliquam
+            dignissimos
+            eius odit cumque aspernatur in, quas quis ratione provident nam omnis magni molestias delectus dolore.</div>
+        <div>Magnam placeat quas iusto nesciunt ipsam ipsa enim quae reprehenderit, dolore amet, quo quod beatae.
+            Possimus
+            veritatis neque iure quia sint illum, vel, nisi quaerat accusantium magni impedit totam. Eum.</div>
+        <div>Autem provident enim doloremque explicabo maiores officiis voluptatum rerum iure distinctio consectetur,
+            placeat, quam officia ab soluta eligendi dicta in iste sed sapiente! Corporis inventore accusantium ipsam
+            nulla
+            magnam voluptatibus!</div>
+        <div>Porro officiis unde accusantium aperiam ea, recusandae commodi. Deleniti esse sunt sequi est minus, illum
+            eum
+            in voluptatibus quas voluptatum ad officiis id veritatis laudantium nesciunt sapiente, ex consequuntur
+            labore!
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
