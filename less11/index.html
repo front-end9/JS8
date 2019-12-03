@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #slider {
+            max-width: 50%;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            width: 320px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        li {
+            border: 2px solid black;
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            border-radius: 50%;
+        }
+
+        li.active {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="slider">
+        <img src="./img/one.png" alt="">
+        <img src="./img/two.jpg" alt="">
+        <img src="./img/three.jpg" alt="">
+        <!-- <img src="./img/four.jpg" alt=""> -->
+        <img src="./img/five.jpg" alt="">
+        <!-- <img src="./img/six.jpg" alt=""> -->
+        <img src="./img/seven.jpg" alt="">
+        <!-- <img src="./img/eight.jpg" alt=""> -->
+    </div>
+
+    <script src="slider.js"></script>
+</body>
+
+</html>
