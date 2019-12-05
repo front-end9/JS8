@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date" name="" id="date">
+    <script>
+        let date = document.getElementById("date");
+
+        let input = document.createElement("input");
+        let btn = document.createElement("button");
+        btn.innerText = "рассчитать";
+        let p = document.createElement("p");
+
+        document.body.appendChild(input);
+        document.body.appendChild(btn);
+        document.body.appendChild(p);
+
+        date.addEventListener("change", function () {
+            console.log(this.value);
+            let year = this.value.slice(0, 4);
+            let url =
+                `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json&date=${year}${this.value.slice(5, 2)}${this.value.slice(8, 2)}`;
+            fetch(url)
+                .then(response => response.json())
+                // .then(myJson => console.log(JSON.stringify(myJson)))
+                .then(myJson => {
+                    console.log(JSON.stringify(myJson));
+                    console.log(myJson);
+                    let eur, usd;
+                    for (const element of myJson) {
+                        if (element.r030 == 978) {
+                            eur = element.rate;
+                        }
+                        if (element.r030 == 840) {
+                            usd = element.rate;
+                        }
+                    }
+                    let count = input.value;
+                    p.innerText = `EUR: ${count*eur}
+        USD: ${count*usd}`;
+                    // function printFruits(_fruits) {
+                    //     let _buf = '<ul>';
+                    //     for (const key in _fruits) {
+                    //         if (typeof _fruits[key] == 'object') {
+                    //             _buf += `<li>${key.toUpperCase()}: ${printFruits(_fruits[key])}</li>`;
+                    //         } else {
+                    //             _buf += `<li>${key}: ${_fruits[key]}</li>`;
+                    //         }
+                    //     }
+                    //     return _buf + '</ul>';
+                    // }
+
+                    // document.write(`${printFruits(myJson)}`);
+                    //978 840
+                })
+                .catch(function (error) {
+                    console.log("ERROR!");
+                    console.error(error);
+                })
+        })
+    </script>
+</body>
+
+</html>
