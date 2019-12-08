@@ -32,14 +32,14 @@ class Blog {
     Init() {
         this.Get('/users', this.SetUsers, this);
     }
-    SetUsers(arr, self) {
-        for (const user of arr) {
+    SetUsers(json, self) {
+        for (const user of json) {
             self.users.push(new User(user));
         }
         self.RenderUsers(self.users, self);
     }
-    RenderUsers(arr, self) {
-        for (const user of arr) {
+    RenderUsers(json, self) {
+        for (const user of json) {
             let li = document.createElement("li");
             li.innerText = user.RenderUser();
             li.addEventListener("click", () => self.SetUsersInfo(user, self, li));
@@ -68,8 +68,8 @@ class Blog {
             user.showPosts = true;
         }
     }
-    RenderPosts(arr, el) {
-        for (const item of arr) {
+    RenderPosts(json, el) {
+        for (const item of json) {
             let article = document.createElement("article");
 
             let h2 = document.createElement("h2");
@@ -84,11 +84,11 @@ class Blog {
             el.appendChild(article);
         }
     }
-    Get(path, func, el) {
+    Get(path, callbackFunction, el) {
         fetch(`https://jsonplaceholder.typicode.com${path}`)
             .then(response => response.json())
             .then(json => {
-                func(json, el);
+                callbackFunction(json, el);
             });
     }
 }
