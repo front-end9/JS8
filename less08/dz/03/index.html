@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid black;
+        }
+
+        div:nth-child(1) {
+            background-color: red;
+        }
+
+        div:nth-child(2) {
+            background-color: yellow;
+        }
+
+        div:nth-child(3) {
+            background-color: green;
+        }
+
+        div:not(.active) {
+            background-color: transparent;
+        }
+
+        ul {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <section>
+        <div class="active"></div>
+        <div></div>
+        <div></div>
+    </section>
+    <button onclick="Next()">Переключить свет</button> -->
+    <ul>
+        <li>red</li>
+        <li>orange</li>
+        <li>yellow</li>
+        <li>green</li>
+        <li>lightblue</li>
+        <li>blue</li>
+        <li>violet</li>
+    </ul>
+    <script src="script.js"></script>
+</body>
+
+</html>

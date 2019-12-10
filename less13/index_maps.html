@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="select">
+        <option value="poltava">poltava</option>
+        <option value="kiev">kiev</option>
+    </select>
+    <div id="map"></div>
+    <script>
+        var map;
+
+        let poltava = {
+                lat: 49.588983,
+                lng: 34.5554741
+            },
+            kiev = {
+                lat: 50.4606969,
+                lng: 30.4768644
+            };
+
+        document.getElementById("select").addEventListener("change", function () {
+            map.setCenter(eval(`${this.value}`));
+        });
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: poltava,
+                zoom: 17
+            });
+
+            let markerPoltava = new google.maps.Marker({
+                position: poltava,
+                map: map
+            });
+            let markerKiev = new google.maps.Marker({
+                position: kiev,
+                map: map
+            });
+
+            var origin1 = new google.maps.LatLng(55.930385, -3.118425);
+            var origin2 = 'Greenwich, England';
+            var destinationA = 'Stockholm, Sweden';
+            var destinationB = new google.maps.LatLng(50.087692, 14.421150);
+
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix({
+                origins: [origin1, origin2],
+                destinations: [destinationA, destinationB],
+                travelMode: 'DRIVING',
+                transitOptions: TransitOptions,
+                drivingOptions: DrivingOptions,
+                unitSystem: UnitSystem,
+                avoidHighways: Boolean,
+                avoidTolls: Boolean,
+            }, callback);
+
+            function callback(response, status) {
+                console.log(response);
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+</body>
+
+</html>
