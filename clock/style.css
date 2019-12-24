@@ -1,0 +1,30 @@
+#root {
+    border: 5px solid blue;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    transform: rotateZ(-90deg);
+}
+
+#arrowSec {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform-origin: left;
+    background-color: black;
+    width: 50%;
+    height: 1px;
+    transition: linear transform 1s;
+}
+
+#arrowMin {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform-origin: left;
+    background-color: black;
+    width: 35%;
+    height: 5px;
+    transition: linear transform 60s;
+}
